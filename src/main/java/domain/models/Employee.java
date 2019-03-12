@@ -1,5 +1,8 @@
 package domain.models;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,11 +21,12 @@ public class Employee {
     private String lastname;
     private String email;
 
-    @OneToMany(targetEntity = Call.class)
+    @OneToMany(targetEntity = Game.class)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List calls;
 
     @ManyToOne
-    private Company company;
+    private Gamestore gamestore;
 
     public Employee() {
     }
@@ -67,12 +71,12 @@ public class Employee {
         this.calls = calls;
     }
 
-    public Company getCompany() {
-        return company;
+    public Gamestore getGamestore() {
+        return gamestore;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setGamestore(Gamestore gamestore) {
+        this.gamestore = gamestore;
     }
 
     @Override
@@ -83,7 +87,7 @@ public class Employee {
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
                 ", calls=" + calls +
-                ", company=" + company +
+                ", gamestore=" + gamestore +
                 '}';
     }
 }

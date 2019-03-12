@@ -16,7 +16,7 @@ public class Product {
     private String name;
 
     @ManyToOne
-    private Company company;
+    private Gamestore gamestore;
 
     public Product() {
     }
@@ -37,12 +37,12 @@ public class Product {
         this.name = name;
     }
 
-    public Company getCompany() {
-        return company;
+    public Gamestore getGamestore() {
+        return gamestore;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setGamestore(Gamestore gamestore) {
+        this.gamestore = gamestore;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", company=" + company +
+                ", gamestore=" + gamestore +
                 '}';
     }
 }

@@ -15,11 +15,11 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestControllers(Set<Class<?>> controllers) {
-        controllers.add(CallController.class);
-        controllers.add(CompanyController.class);
+        controllers.add(GameController.class);
+        controllers.add(GamestoreController.class);
         controllers.add(CustomerController.class);
         controllers.add(EmployeeController.class);
         controllers.add(ProductController.class);
-        controllers.add(SubscriptionController.class);
+        controllers.add(ReviewController.class);
     }
 }

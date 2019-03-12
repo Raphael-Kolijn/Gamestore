@@ -12,7 +12,7 @@ import java.util.List;
 @Stateless
 public class EmployeeRepository {
 
-    @PersistenceContext(unitName = "callcenterPU")
+    @PersistenceContext(unitName = "gamestorePU")
     private EntityManager em;
 
     public List<Employee> getAll() {

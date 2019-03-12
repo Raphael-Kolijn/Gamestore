@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="callcenter:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="callcenter.war">
-      <element id="artifact" artifact-name="callcenter:war exploded" />
-    </root>
-  </artifact>
-</component>

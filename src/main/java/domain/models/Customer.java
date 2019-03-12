@@ -1,5 +1,8 @@
 package domain.models;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,7 +20,8 @@ public class Customer {
     private String firstname;
     private String lastname;
 
-    @OneToMany(targetEntity = Call.class)
+    @OneToMany(targetEntity = Game.class)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List calls;
 
     public Customer() {

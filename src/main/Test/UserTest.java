@@ -1,6 +1,6 @@
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import domain.models.Call;
+import domain.models.Game;
 import org.junit.Rule;
 import org.junit.Test;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
@@ -13,8 +13,8 @@ public class UserTest {
 
     @Test
     public void CreateUser(){
-        Call u = new Call();
-        u.setDuration(10);
+        Game u = new Game();
+        u.setPrice(10);
 
         WireMock wiremock = new WireMock(8888);
 
