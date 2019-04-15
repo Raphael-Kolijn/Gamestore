@@ -1,11 +1,11 @@
 package domain.controllers;
-
-import domain.controllers.response.Response;
 import domain.models.Customer;
 import domain.services.CustomerService;
-
 import javax.ejb.EJB;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+
+import static org.apache.openejb.persistence.PersistenceBootstrap.logger;
 
 @Path("customer")
 public class CustomerController {
@@ -16,7 +16,12 @@ public class CustomerController {
     @GET
     @Produces("application/json")
     public Response getAll() {
-        return new Response(true, service.getAll());
+        try {
+            return Response.ok(service.getAll()).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @GET
@@ -24,27 +29,47 @@ public class CustomerController {
     @Produces("application/json")
     public Response getById(@PathParam("id") Long id) {
         Customer customer = service.getById(id);
-        boolean success = customer != null;
+        try {
+            if (customer == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
 
-        return new Response(success, customer);
+            return Response.ok(customer).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @POST
     @Consumes("application/json")
     @Produces("application/json")
     public Response create(Customer customer) {
-        boolean success = service.create(customer);
-
-        return new Response(success);
+        try {
+            service.create(customer);
+            return Response.status(Response.Status.CREATED).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @PUT
     @Consumes("application/json")
     @Produces("application/json")
-    public Response update(Customer customer) {
-        boolean success = service.update(customer);
+    public Response update(Long id) {
+        try {
+            Customer customer = service.getById(id);
 
-        return new Response(success);
+            if (customer == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
+
+            service.update(customer);
+
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception ex) {
+            logger.severe(ex.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @DELETE
@@ -52,8 +77,12 @@ public class CustomerController {
     @Consumes("application/json")
     @Produces("application/json")
     public Response delete(@PathParam("id") Long id) {
-        boolean success = service.delete(id);
-
-        return new Response(success);
+        try {
+            service.delete(id);
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 }

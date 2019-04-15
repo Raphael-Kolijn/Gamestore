@@ -6,13 +6,13 @@ import org.junit.Test;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static io.restassured.RestAssured.given;
 
-public class UserTest {
+public class GameTest {
 
     @Rule
     public WireMockRule wiremockRule = new WireMockRule(8888);
 
     @Test
-    public void CreateUser(){
+    public void CreateGame(){
         Game u = new Game();
         u.setPrice(10);
 

@@ -1,11 +1,12 @@
 package domain.controllers;
-
-import domain.controllers.response.Response;
-import domain.models.Product;
-import domain.services.ProductService;
+import domain.models.*;
+import domain.services.*;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+
+import static org.apache.openejb.persistence.PersistenceBootstrap.logger;
 
 @Path("product")
 public class ProductController {
@@ -16,7 +17,12 @@ public class ProductController {
     @GET
     @Produces("application/json")
     public Response getAll() {
-        return new Response(true, service.getAll());
+        try {
+            return Response.ok(service.getAll()).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @GET
@@ -24,27 +30,47 @@ public class ProductController {
     @Produces("application/json")
     public Response getById(@PathParam("id") Long id) {
         Product product = service.getById(id);
-        boolean success = product != null;
+        try {
+            if (product == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
 
-        return new Response(success, product);
+            return Response.ok(product).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @POST
     @Consumes("application/json")
     @Produces("application/json")
     public Response create(Product product) {
-        boolean success = service.create(product);
-
-        return new Response(success);
+        try {
+            service.create(product);
+            return Response.status(Response.Status.CREATED).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @PUT
     @Consumes("application/json")
     @Produces("application/json")
-    public Response update(Product product) {
-        boolean success = service.update(product);
+    public Response update(Long id) {
+        try {
+            Product product = service.getById(id);
 
-        return new Response(success);
+            if (product == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
+
+            service.update(product);
+
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception ex) {
+            logger.severe(ex.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @DELETE
@@ -52,8 +78,12 @@ public class ProductController {
     @Consumes("application/json")
     @Produces("application/json")
     public Response delete(@PathParam("id") Long id) {
-        boolean success = service.delete(id);
-
-        return new Response(success);
+        try {
+            service.delete(id);
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 }

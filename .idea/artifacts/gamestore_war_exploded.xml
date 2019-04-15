@@ -26,7 +26,12 @@
           <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.9.5" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.1" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.9" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.9" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.9" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.12" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.6" />
           <element id="library" level="project" name="Maven: org.apache.openejb:openejb-core:4.7.5" />
@@ -83,6 +88,17 @@
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils-core:1.8.3" />
           <element id="library" level="project" name="Maven: org.apache.bval:bval-jsr303:0.5" />
           <element id="library" level="project" name="Maven: org.fusesource.jansi:jansi:1.16" />
+          <element id="library" level="project" name="Maven: org.bitbucket.b_c:jose4j:0.5.0" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-api:0.10.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-impl:0.10.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-jackson:0.10.5" />
+          <element id="library" level="project" name="Maven: javax.xml.crypto:jsr105-api:1.0.1" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.60" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0-m09" />
+          <element id="library" level="project" name="Maven: com.auth0:java-jwt:3.8.0" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.5.0-b01" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

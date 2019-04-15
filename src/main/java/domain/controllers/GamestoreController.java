@@ -1,11 +1,12 @@
 package domain.controllers;
-
-import domain.controllers.response.Response;
-import domain.models.Gamestore;
-import domain.services.GamestoreService;
+import domain.models.*;
+import domain.services.*;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+
+import static org.apache.openejb.persistence.PersistenceBootstrap.logger;
 
 @Path("gamestore")
 public class GamestoreController {
@@ -16,7 +17,12 @@ public class GamestoreController {
     @GET
     @Produces("application/json")
     public Response getAll() {
-        return new Response(true, service.getAll());
+        try {
+            return Response.ok(service.getAll()).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @GET
@@ -24,27 +30,47 @@ public class GamestoreController {
     @Produces("application/json")
     public Response getById(@PathParam("id") Long id) {
         Gamestore gamestore = service.getById(id);
-        boolean success = gamestore != null;
+        try {
+            if (gamestore == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
 
-        return new Response(success, gamestore);
+            return Response.ok(gamestore).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @POST
     @Consumes("application/json")
     @Produces("application/json")
     public Response create(Gamestore gamestore) {
-        boolean success = service.create(gamestore);
-
-        return new Response(success);
+        try {
+            service.create(gamestore);
+            return Response.status(Response.Status.CREATED).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @PUT
     @Consumes("application/json")
     @Produces("application/json")
-    public Response update(Gamestore gamestore) {
-        boolean success = service.update(gamestore);
+    public Response update(Long id) {
+        try {
+            Gamestore gamestore = service.getById(id);
 
-        return new Response(success);
+            if (gamestore == null)
+                return Response.status(Response.Status.NOT_FOUND).build();
+
+            service.update(gamestore);
+
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception ex) {
+            logger.severe(ex.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @DELETE
@@ -52,8 +78,12 @@ public class GamestoreController {
     @Consumes("application/json")
     @Produces("application/json")
     public Response delete(@PathParam("id") Long id) {
-        boolean success = service.delete(id);
-
-        return new Response(success);
+        try {
+            service.delete(id);
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 }
