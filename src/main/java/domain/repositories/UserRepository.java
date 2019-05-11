@@ -1,6 +1,7 @@
 package domain.repositories;
 
-import domain.models.User;
+import domain.Interceptors.*;
+import domain.models.*;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
@@ -18,7 +19,7 @@ public class UserRepository {
     @PersistenceContext(unitName = "gamestorePU")
     public EntityManager em;
 
-    //@Interceptors(UserInterceptor.class)
+    @Interceptors(SimpleInterceptor.class)
     public void create(User user){
         try {
 //            em.getTransaction().begin();
@@ -96,17 +97,4 @@ public class UserRepository {
             return null;
         }
     }
-
-
-//    public User findByEmail(String user) {
-//        User user1;
-//        try {
-//            user1 = em.createQuery(
-//                    "SELECT email FROM User where email = :user ", User.class).getSingleResult();
-//            return user1;
-//        }catch (Exception ex){
-//            System.out.println(ex.getMessage());
-//            return null;
-//        }
-//    }
 }

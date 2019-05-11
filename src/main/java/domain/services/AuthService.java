@@ -51,15 +51,17 @@ public class AuthService {
         if (email.isEmpty() || password.isEmpty())
             return null;
 
+        String passwordHash;
+
         try {
             // encode password with SHA256
-            password = AuthenticationUtils.encodeSHA256(password);
+            passwordHash = AuthenticationUtils.encodeSHA256(password);
         } catch (Exception e) {
             logger.warning(e.getMessage());
             return null;
         }
 
-        User u = getByUsernameAndPassword(email, password);
+        User u = getByUsernameAndPassword(email, passwordHash);
 
         if (u == null)
             return null;

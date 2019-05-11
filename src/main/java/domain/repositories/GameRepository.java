@@ -1,7 +1,7 @@
 package domain.repositories;
 
 import domain.models.Game;
-import domain.models.SimpleInterceptor;
+import domain.Interceptors.SimpleInterceptor;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;

@@ -19,7 +19,6 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     @EJB
     private JWTService service;
 
-
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
         //ignore /auth requests

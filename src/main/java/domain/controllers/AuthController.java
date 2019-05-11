@@ -1,10 +1,12 @@
 package domain.controllers;
 
 
+import domain.Interceptors.*;
 import domain.models.*;
 import domain.services.*;
 
 import javax.ejb.*;
+import javax.interceptor.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
@@ -25,6 +27,7 @@ public class AuthController {
     @Path("login")
     @Consumes("application/json")
     @Produces("application/json")
+    @Interceptors({UserInterceptor.class})
     public Response login(User user) {
         return Response.ok(service.login(user.getEmail(), user.getPassword())).build();
     }

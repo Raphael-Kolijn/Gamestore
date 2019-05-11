@@ -25,6 +25,7 @@ public class User implements Serializable{
     @Email
     private String email;
 
+    //@Size(min=4, max=24)
     private String password;
     private Long verification_code;
 

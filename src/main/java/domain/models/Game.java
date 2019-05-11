@@ -1,9 +1,12 @@
 package domain.models;
 
+import domain.Interceptors.*;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
+import javax.interceptor.*;
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.List;
 
 @Entity
@@ -11,13 +14,16 @@ import java.util.List;
         @NamedQuery(name = "Game.getById", query = "select c from Game c where c.id = :id"),
         @NamedQuery(name = "Game.getAll", query = "select c from Game c")
 })
+@Interceptors({GameInterceptor.class})
 @Table(name = "games")
 public class Game {
 
     @Id
     @GeneratedValue
     private Long id;
+    @DecimalMax("70.00")
     private int price;
+    @Size(min=2, max=240)
     private String name;
 
     @ManyToOne
@@ -86,9 +92,7 @@ public class Game {
                 "id=" + id +
                 ", duration=" + price +
                 ", date=" + name +
-                ", customer=" + customer +
-                ", employee=" + employee +
-                ", subscriptions=" + subscriptions +
+
                 '}';
     }
 }
