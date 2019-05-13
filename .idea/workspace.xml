@@ -6,35 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a05611e-e9d9-41ef-80e9-7fb5f5f9da8d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Interceptors/GameInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Interceptors/UserInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Filters/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Filters/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/models/SimpleInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Interceptors/SimpleInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/repositories/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/repositories/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Filters/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Filters/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/models/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/models/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/models/SimpleInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/AuthService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/AuthService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/Filters/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/Filters/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/models/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/models/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/models/SimpleInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/services/AuthService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/services/AuthService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gamestore/WEB-INF/classes/domain/services/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/UserTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="6a05611e-e9d9-41ef-80e9-7fb5f5f9da8d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -252,7 +224,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="55" />
     <option name="width" value="783" />
     <option name="height" value="907" />
@@ -339,7 +311,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/VueJS-Webshop-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/jaxrs-hateoas-example" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -616,7 +588,7 @@
       <workItem from="1557126038744" duration="5965000" />
       <workItem from="1557331200336" duration="2263000" />
       <workItem from="1557430571538" duration="36000" />
-      <workItem from="1557432288642" duration="9029000" />
+      <workItem from="1557432288642" duration="10764000" />
     </task>
     <servers />
   </component>
@@ -632,11 +604,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145277000" />
+    <option name="totallyTimeSpent" value="147012000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1554" height="916" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.20221066" side_tool="true" weight="0.4344569" />
